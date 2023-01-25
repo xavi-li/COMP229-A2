@@ -1,25 +1,16 @@
 {
   "name": "229a1",
-  "version": "1.0.0",
-  "description": "COMP229 Assignment 1",
-  "main": "app.js",
+  "version": "0.0.0",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/xavi-li/COMP229-A1.git"
-  },
-  "author": "Yuen Kwan LI",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/xavi-li/COMP229-A1/issues"
-  },
-  "homepage": "https://github.com/xavi-li/COMP229-A1#readme",
   "dependencies": {
-    "cookie-parser": "^1.4.6",
-    "express": "^4.18.2",
-    "morgan": "^1.10.0",
-    "nodemon": "^2.0.20"
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1"
   }
 }
