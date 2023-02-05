@@ -1,14 +1,16 @@
+/* 
+  File Name:     index.js 
+  Student Name:  Yuen Kwan LI
+  Student ID:    301228849
+  Date:          05-FEB-2023 
+*/
+
 var express = require('express');
 var router = express.Router();
 
 /* GET index page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Home' });
-});
-
-/* GET Home page. */
-router.get('/home', function(req, res, next) {
-  res.render('home', { title: 'Home' });
 });
 
 /* GET About Me page. */
@@ -18,7 +20,7 @@ router.get('/about', function(req, res, next) {
 
 /* GET Projects page. */
 router.get('/projects', function(req, res, next) {
-  res.render('projects', { title: 'Projects' });
+  res.render('projects', { title: 'Projects', tagline: "tagline here"});
 });
 
 /* GET Services page. */
