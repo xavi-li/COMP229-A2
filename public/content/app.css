@@ -38,7 +38,6 @@ form {
   margin: 20px auto;
 }
 
-
 .half {
   float: left;
   width: 48%;
@@ -65,3 +64,23 @@ form {
   margin-bottom: 1em;
 }
 
+.accordion-button:not(.collapsed) {
+  background: #c2bbbb;
+  color:#ffffff;
+}
+
+.accordion-button:not(.collapsed)::after {
+  background: #c2bbbb;
+  color:#ffffff;
+}
+
+.accordion-button.collapsed {
+  background: #e7e7e7;
+}
+
+.accordion-button:focus {
+  z-index: 3;
+  border-color: #FFF !important;
+  outline: 0;
+  box-shadow: none;
+}
