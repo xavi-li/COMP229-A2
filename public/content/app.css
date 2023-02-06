@@ -34,6 +34,13 @@ h2 {
   text-shadow: 2px 2px #e5e6e6;
 }
 
+h5 {
+  text-align: left;
+  margin-left: 1em;
+  margin-right: 1em;
+  margin-bottom: 1em;
+}
+
 h6 {
   padding-left: 0em;
 }
@@ -64,6 +71,10 @@ form {
 .right { 
   margin-left: 50%;
   float: center;
+}
+
+.left-1em {
+  margin-left: 1em;
 }
 
 .left-60 {
@@ -108,4 +119,11 @@ form {
 .carousel-caption {
   top: 3em;
   bottom: auto;
+}
+
+.form-canvas {
+  width: 100%; 
+  border-radius:10px; 
+  background:#f9f9f9;
+  padding: 1em;
 }
