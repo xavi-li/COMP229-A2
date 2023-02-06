@@ -44,12 +44,14 @@ form {
   margin-bottom: 1em;
 }
 
-.right { 
-  width: 50%; 
+.left {
+  width: 50%;
+  float: left;
 }
 
-.left {
-     margin-right: 2%; 
+.right { 
+  margin-left: 50%;
+  float: center;
 }
 
 .left-60 {
