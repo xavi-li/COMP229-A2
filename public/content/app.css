@@ -86,3 +86,14 @@ form {
   outline: 0;
   box-shadow: none;
 }
+
+.carousel {
+  margin-top: 1em;
+  margin-left: 1em;
+  margin-right: 1em;
+}
+
+.carousel-caption {
+  top: 3em;
+  bottom: auto;
+}

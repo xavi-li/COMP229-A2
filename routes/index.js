@@ -20,12 +20,12 @@ router.get('/about', function(req, res, next) {
 
 /* GET Projects page. */
 router.get('/projects', function(req, res, next) {
-  res.render('projects', { title: 'Projects', tagline: "tagline here"});
+  res.render('projects', { title: 'Projects Showcase'});
 });
 
 /* GET Services page. */
 router.get('/services', function(req, res, next) {
-  res.render('services', { title: 'Services' });
+  res.render('services', { title: 'Professional Services' });
 });
 
 /* GET Contact Me page. */
