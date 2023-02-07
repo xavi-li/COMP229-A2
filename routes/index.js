@@ -38,7 +38,7 @@ router.post('/', function(req, res, next) {
   // To-DO: Input Form data processing
   console.log('Name:', req.body.name);
   console.log('Email:', req.body.email);
-  console.log('Contact Number:', req.body.number);
+  console.log('Contact Number:', req.body.contactNumber);
   console.log('Message:', req.body.message);
 
   // redirect to index page after submission
