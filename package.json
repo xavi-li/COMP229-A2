@@ -8,7 +8,7 @@
   "scripts": {
     "dev_start": "nodemon ./server.js",
     "start": "node ./server.js",
-    "build": "node app.js"
+    "build": "node ./app.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.2.1",
