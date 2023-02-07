@@ -19,6 +19,8 @@
     "http-errors": "~1.6.3",
     "jquery": "^3.6.3",
     "morgan": "~1.9.1",
-    "popper": "^1.0.1"
+    "popper": "^1.0.1",
+    "body-parser": "~1.19.0"
+
   }
 }

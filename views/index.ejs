@@ -1,19 +1,29 @@
 <%- include partials/header.ejs %>
 
 <%- include partials/main_nav.ejs %>
-  
+
+<!-- Prompt after contact form data submitted -->
+<% if (message) { %>
+  <script>
+    window.alert("<%= message %>");
+  </script>
+<% } %>
 
   <!-- Main Content -->
   <main class="container">
     <div class="jumbotron">
       <h1 class="display-4">Welcome</h1>
-      <h6 class="display-10">My mission is to continually expand my knowledge and expertise in the field of 
-        software engineering and AI, and to use my skills to drive innovation and positive change. </h6>
-      <h6 class="display-10">I am passionate about the potential of AI to transform industries and improve people's lives, 
-        and I am dedicated to staying at the forefront of this rapidly-evolving field. Whether through my studies, work, 
-        or collaborations, I aim to be a valuable contributor to the technology community and to make a meaningful impact in the world.</h6>
-      <br/>
-      <p><a href="/about">Click to know more about me </a></p>
+      <div class="form-canvas">
+          <!-- Mission Statement -->
+          <h6 class="left-1em">My mission is to continually expand my knowledge and expertise in the field of 
+            software engineering and AI, and to use my skills to drive innovation and positive change. </h6>
+          <h6 class="left-1em">I am passionate about the potential of AI to transform industries and improve people's lives, 
+            and I am dedicated to staying at the forefront of this rapidly-evolving field. Whether through my studies, work, 
+            or collaborations, I aim to be a valuable contributor to the technology community and to make a meaningful impact in the world.</h6>
+          <br/>
+          <!-- Link to About me page -->
+          <p class="left-1em"><a href="/about">Click to know more about me >> </a></p>
+      </div>
     </div>
   </main>
   
