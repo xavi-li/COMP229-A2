@@ -6,6 +6,7 @@
     "node": ">=16.0.0"
  },
   "scripts": {
+    "dev_start": "nodemon ./server.js",
     "start": "node ./server.js",
     "build": "node ./app.js"
   },
