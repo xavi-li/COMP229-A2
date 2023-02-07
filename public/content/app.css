@@ -128,9 +128,3 @@ form {
   padding: 1em;
 }
 
-@media only screen and (max-width: 767px) {
-  .logo-div {
-    width: 80%;
-    min-width: 200px;
-  }
-}
