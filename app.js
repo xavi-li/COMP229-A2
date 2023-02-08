@@ -13,7 +13,6 @@ let logger = require('morgan');
 let bodyParser = require('body-parser');
 
 let indexRouter = require('./routes/index');
-let usersRouter = require('./routes/users');
 
 let app = express();
 
@@ -27,17 +26,15 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'node_modules')));
-// use body-parser middleware
+// mount body-parser middleware for form data
 app.use(bodyParser.urlencoded({ extended: true }));
-
+// mount Express Route
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
   res.status(404).render('error', {title: "Sorry, page not found"});
-
 });
 
 // error handler
