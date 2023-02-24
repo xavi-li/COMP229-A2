@@ -5,8 +5,10 @@
   Date:          05-FEB-2023 
 */
 
-var express = require('express');
-var router = express.Router();
+let express = require('express');
+let router = express.Router();
+
+//let indexController = require('../controllers/index'); 
 
 /* GET index page, aka Home Page */
 router.get('/', function(req, res, next) {
