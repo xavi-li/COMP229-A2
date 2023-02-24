@@ -12,6 +12,26 @@ let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 let bodyParser = require('body-parser');
 
+// modules for auth
+let session = require('express-session');
+let passport = require('passport');
+let passportLocal = require('passport-local');
+let localStrategy = passport.localStrategy;
+let flash = require('connect-flash');
+
+// database setup
+let mongoose = require('mongoose');
+let DB = require('./db');
+
+// point mongoose to the DB URI
+mongoose.connect(DB.URI, {useNewUrlParser: true, useUnifiedTopology: true});
+
+let mongoDB = mongoose.connection;
+mongoDB.on('error', console.error.bind(console, 'Connection Error:'));
+mongoDB.once('open', ()=>{
+  console.log('Connected to MongoDB...');
+});
+
 let indexRouter = require('../routes/index');
 
 let app = express();
@@ -28,6 +48,30 @@ app.use(express.static(path.join(__dirname, '../../public')));
 app.use(express.static(path.join(__dirname, '../../node_modules')));
 // mount body-parser middleware for form data
 app.use(bodyParser.urlencoded({ extended: true }));
+
+// setup express
+app.use(session({
+  secret:"SomeSecret", 
+  saveUninitialized:false,
+  resave:false
+}));
+
+// init flash to maintain the error msg
+app.use(flash());
+
+// init passport
+app.use(passport.initialize());
+app.use(passport.session());
+
+// passport user config, create a user model instance
+let userModel = require('../models/user');
+let User = userModel.User;
+passport.use(User.createStrategy());
+
+// serialize and deserialize user info
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
 // mount Express Route
 app.use('/', indexRouter);
 
@@ -45,7 +89,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render('error', { title: 'Error'});
 });
 
 
