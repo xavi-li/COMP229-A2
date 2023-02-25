@@ -12,33 +12,10 @@ module.exports.displayContactList = (req, res, next) => {
         }
         else {
            //console.log(contactList);
-            res.render('contact/list', { title: 'Contacts', contactList: contactList, displayName:req.user?req.user.displayName:'' });
+            res.render('contact/list', { title: 'Business Contacts List', ContactList: contactList, displayName:req.user?req.user.displayName:'' });
         }
     });
 }
-
-// module.exports.displayAddPage = (req, res, next) => {
-//     res.render('contact/add',{title:'Add Book',displayName:req.user?req.user.displayName:''})
-// }
-
-// module.exports.processAddPage = (req, res, next) => {
-//     let newBook = Contact({
-//         "name": req.body.name,
-//         "author": req.body.author,
-//         "published": req.body.published,
-//         "description": req.body.description,
-//         "price": req.body.price
-//     });
-//     Contact.create(newBook, (err, Book) => {
-//         if (err) {
-//             console.log(err);
-//             res.end(err);
-//         }
-//         else {
-//             res.redirect('/contactList');
-//         }
-//     });
-// }
 
 module.exports.displayEditPage = (req, res, next) => {
     let id = req.params.id;
@@ -48,7 +25,7 @@ module.exports.displayEditPage = (req, res, next) => {
             res.end(err);
         }
         else {
-            res.render('contact/update', { title: 'Update Contacts', contact: contactToUpdate, displayName:req.user?req.user.displayName:'' });
+            res.render('contact/update', { title: 'Update Business Contacts', contact: contactToUpdate, displayName:req.user?req.user.displayName:'' });
         }
     });
 }

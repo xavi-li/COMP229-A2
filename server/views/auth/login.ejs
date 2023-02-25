@@ -6,26 +6,30 @@
     <!-- Message Area -->
     <% if(messages.length > 0 ) {%>
         <div class="alert alert-danger">
-            <%=message%>
+            <%= message %>
         </div>
     <% } %>
-    <div class="row">
-        <div class="offset md-4 col-md-4">
-            <h1>Please login</h1>
-            <form method="POST" autocomplete="off">
-                <fieldset class="form-group">
-                    <label for="username">Username: </label>
-                    <input type="text" class="form-control" id="username" name="username" placeholder="Enter username" required autofocus>
-                </fieldset>
-                <fieldset class="form-group text">
-                    <label for="password">Password: </label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
-                </fieldset>
-                <fieldset class="form-group text-right">
-                    <input type="submit" class="btn btn-success" value="Login">
-                    <a href="/"><input type="button" class="btn btn-warning" value="cancel"></a>
-                </fieldset>
-            </form>
+    <div class="form-canvas">
+        <div class="row">
+            <div class="offset-md-4 col-md-3">   
+                <form method="POST" autocomplete="off">
+                    <fieldset class="form-group">
+                        <label for="username">Username </label>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="Enter username" required autofocus>
+                    </fieldset>
+                    <br>
+                    <fieldset class="form-group text">
+                        <label for="password">Password </label>
+                        <input type="password" class="form-control" id="password" name="password" placeholder="Enter password" required>
+                    </fieldset>
+                    <br>
+                    <fieldset class="form-group text-right">
+                        <input type="submit" class="btn btn-success" value="Login">
+                        &nbsp;&nbsp;&nbsp;
+                        <a href="/"><input type="button" class="btn btn-warning" value="cancel"></a>
+                    </fieldset>
+                </form>
+            </div>
         </div>
     </div>
 

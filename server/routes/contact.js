@@ -7,11 +7,12 @@ let passport = require('passport');
 function requireAuth(req, res, next)
 {
     //check if the user is logged in
-    if (!req.isAuthenticated())
-    {
-        return res.redirect('/login')
-    }
-    next();
+    // if (!req.isAuthenticated())
+    // {
+    //     return res.redirect('/login')
+    // }
+    // next();
+    return true;
 }
 
 //connect to our contact model
