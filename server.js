@@ -12,7 +12,7 @@
  */
 
 var app = require('./server/config/app');
-var debug = require('debug')('229a1:server');
+var debug = require('debug')('229a2:server');
 var http = require('http');
 
 /**

@@ -8,43 +8,54 @@
 let express = require('express');
 let router = express.Router();
 
-//let indexController = require('../controllers/index'); 
+let indexController = require('../controllers/index'); 
 
-/* GET index page, aka Home Page */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Home', message: ''});
-});
+router.get('/', indexController.displayHomePage);
+router.get('/about', indexController.displayAboutPage);
+router.get('/projects', indexController.displayProjectsPage);
+router.get('/services', indexController.displayServicesPage);
+router.get('/contact', indexController.displayContactPage);
+router.get('/login', indexController.displayLoginPage);
+router.post('/login',indexController.processLoginPage);
+router.get('/logout', indexController.performLogout);
 
-/* GET About Me page. */
-router.get('/about', function(req, res, next) {
-  res.render('about', { title: 'About Me' });
-});
 
-/* GET Projects page. */
-router.get('/projects', function(req, res, next) {
-  res.render('projects', { title: 'Projects Showcase'});
-});
 
-/* GET Services page. */
-router.get('/services', function(req, res, next) {
-  res.render('services', { title: 'Services Available' });
-});
+// router.get('/', function(req, res, next) {
+//   res.render('index', { title: 'Home', message: ''});
+// });
 
-/* GET Contact Me page. */
-router.get('/contact', function(req, res, next) {
-  res.render('contact', { title: 'Contact Me' });
-});
 
-/* POST redirect from Contact to Index */
-router.post('/', function(req, res, next) {
-  // To-DO: Input Form data processing
-  console.log('Name:', req.body.name);
-  console.log('Email:', req.body.email);
-  console.log('Contact Number:', req.body.contactNumber);
-  console.log('Message:', req.body.message);
+// router.get('/about', function(req, res, next) {
+//   res.render('about', { title: 'About Me' });
+// });
 
-  // redirect to index page after submission
-  res.render('index', { title: 'Home', message: 'Form submitted successfully!' });
-});
+
+// router.get('/projects', function(req, res, next) {
+//   res.render('projects', { title: 'Projects Showcase'});
+// });
+
+
+// router.get('/services', function(req, res, next) {
+//   res.render('services', { title: 'Services Available' });
+// });
+
+
+// router.get('/contact', function(req, res, next) {
+//   res.render('contact', { title: 'Contact Me' });
+// });
+
+
+// router.post('/', function(req, res, next) {
+//   // To-DO: Input Form data processing
+//   console.log('Name:', req.body.name);
+//   console.log('Email:', req.body.email);
+//   console.log('Contact Number:', req.body.contactNumber);
+//   console.log('Message:', req.body.message);
+
+//   // redirect to index page after submission
+//   res.render('index', { title: 'Home', message: 'Form submitted successfully!' });
+// });
+
 
 module.exports = router;
