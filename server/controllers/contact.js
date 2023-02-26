@@ -4,7 +4,7 @@ let mongoose = require('mongoose');
 //create a reference to the db Schema which is the model
 let Contact = require('../models/contact');
 
-//we want to display the contactList
+//display the contactList
 module.exports.displayContactList = (req, res, next) => {
     Contact.find((err, contactList) => {
         if (err) {
@@ -14,10 +14,10 @@ module.exports.displayContactList = (req, res, next) => {
            //console.log(contactList);
             res.render('contact/list', { title: 'Business Contacts List', ContactList: contactList, displayName:req.user?req.user.displayName:'' });
         }
-    });
+    }).sort('contact_name'); //order by contact_name in ascending alphabetical order
 }
 
-module.exports.displayEditPage = (req, res, next) => {
+module.exports.displayUpdatePage = (req, res, next) => {
     let id = req.params.id;
     Contact.findById(id, (err, contactToUpdate) => {
         if (err) {
@@ -25,12 +25,12 @@ module.exports.displayEditPage = (req, res, next) => {
             res.end(err);
         }
         else {
-            res.render('contact/update', { title: 'Update Business Contacts', contact: contactToUpdate, displayName:req.user?req.user.displayName:'' });
+            res.render('contact/update', { title: 'Update Business Contacts', Contact: contactToUpdate, displayName:req.user?req.user.displayName:'' });
         }
     });
 }
 
-module.exports.processEditPage = (req, res, next) => {
+module.exports.processUpdatePage = (req, res, next) => {
     let id = req.params.id
     let updatedBook = Contact({
         "_id": id,
@@ -38,7 +38,7 @@ module.exports.processEditPage = (req, res, next) => {
         "contact_number": req.body.contactNumber,
         "email_address": req.body.emarilAddress
     });
-    console.log('req.body.price' , req.body)
+
     Contact.updateOne({ _id: id }, updatedBook, (err) => {
         if (err) {
             console.log(err);

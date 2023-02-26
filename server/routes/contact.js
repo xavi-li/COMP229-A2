@@ -22,11 +22,11 @@ let contactController = require('../controllers/contact');
 //GET ROUTE for the contact list page -READ OPERATION
 router.get('/', contactController.displayContactList);
 
-// GET Route for displaying the Edit page - UPDATE operation
-router.get('/update/:id', requireAuth, contactController.displayEditPage);
+// GET Route for displaying the Update page - UPDATE operation
+router.get('/update/:id', requireAuth, contactController.displayUpdatePage);
 
-// POST Route for processing the Edit page - UPDATE Operation
-router.post('/update/:id', requireAuth, contactController.processEditPage);
+// POST Route for processing the Update page - UPDATE Operation
+router.post('/update/:id', requireAuth, contactController.processUpdatePage);
 
 // GET to perform Deletion - DELETE Operation 
 router.get('/delete/:id', requireAuth, contactController.performDelete);

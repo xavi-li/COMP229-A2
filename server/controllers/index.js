@@ -60,16 +60,16 @@ module.exports.displayLoginPage = (req, res, next) => {
 }
 
 module.exports.processLoginPage = (req, res, next) => {
-    passport.authenticate('local', (err, user, info) => {
+    passport.authenticate('local', (err, User, info) => {
         // server error?
         if (err) {
             return next(err);
         }
         // is there a user login error?
-        if (!user) {
+        if (!User) {
             console.log("user login error: " + req.body.username + "(" + req.body.password + ")");
                          
-            req.flash("message", 'Auth Error');
+            req.flash("loginMessage", 'Authentication Error');
             return res.redirect('/login'); // back to login page
         }
 

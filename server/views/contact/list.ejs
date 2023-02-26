@@ -8,28 +8,29 @@
     <h1 class="display-4"><%= title %></h1>
     <div class="form-canvas">
         <div class="row">
-            <div class="offset-md-1 col-md-11">                
+            <div class="offset-md-1 col-md-10">                
                 <br>
                 <table class="table table-bordered table-striped table-hover">
                     <!-- Header Row-->
-                    <tr class="d-flex">
+                    <tr>
                         <th class="text-center col-2">Name</th>
                         <th class="text-center col-2">Contact Number</th>
                         <th class="text-center col-3">Email Address</th>
+
+                        <th class="text-center col-1"></th>
+                        <th class="text-center col-1"></th>
                         <!-- <% if (typeof displayName == 'string' && displayName) { %> -->
-                        <th class="text-center col-1"></th>
-                        <th class="text-center col-1"></th>
                         <!-- <% } %> -->
                     </tr>
 
                     <!-- Repeatable Template Row -->
 
                     <% for(let count = 0; count < ContactList.length; count++) { %>
-                        <tr class="d-flex">
+                        <tr>
                             <td class="text-center col-2"><%= ContactList[count].contact_name %></td>
                             <td class="text-center col-2"><%= ContactList[count].contact_number %></td>
                             <td class="text-center col-3"><%= ContactList[count].email_address %></td>
-                            <!-- <% if (typeof displayName == 'string' && displayName) { %> -->
+
                             <td class="text-center col-1">
                                 <a href="/contactList/update/<%= ContactList[count]._id %>" class="btn btn-primary btn-sm">
                                 <i class="fas fa-pencil-alt"></i> Edit</a>
@@ -38,10 +39,14 @@
                                 <a href="/contactList/delete/<%= ContactList[count]._id %>" class="btn btn-danger btn-sm">
                                 <i class="fas fa-trash-alt"></i> Delete</a>
                             </td>
+                            <!-- <% if (typeof displayName == 'string' && displayName) { %> -->
                             <!-- <% } %> -->
                         </tr>
                     <% } %>
                 </table>
+
+                <br>
+                <p class="left-1em">* Records are sorted by Contact Name in Ascending order. </a></p>
             </div>
         </div>
     </div>
