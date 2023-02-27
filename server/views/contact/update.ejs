@@ -7,7 +7,6 @@
     <h1 class="display-4"><%= title %></h1>
     <div class="form-canvas">
         <div class="offset-md-3 col-md-6">
-
             <form class="form" method="POST">
                 <div class="form-group">
                     <label for="contactNameTextField">Contact Name</label>
@@ -18,7 +17,7 @@
                     value="<%= Contact.contact_name %>"
                     required>
                 </div>
-
+                <br>
                 <div class="form-group">
                     <label for="contactNumberTextField">Contact Number</label>
                     <input type="text" class="form-control"
@@ -28,7 +27,7 @@
                     value="<%= Contact.contact_number %>"
                     required>
                 </div>
-
+                <br>
                 <div class="form-group">
                     <label for="emailAddressTextField">Email Address</label>
                     <input type="text" class="form-control"
@@ -38,12 +37,17 @@
                     value="<%= Contact.email_address %>"
                     required>
                 </div>
+                <br>
 
                 <button class="btn btn-primary" type="submit">
-                    <i class="fas fa-edit"></i> Submit</button>
-                
-                    <a href="/contactList" class="btn btn-warning">
-                        <i class="fas fa-undo"></i> Cancel</a>
+                    <i class="fas fa-edit"></i> Submit
+                </button>
+                &nbsp;&nbsp;&nbsp;
+                <a href="/contactList/delete/<%= Contact._id %>" class="btn btn-danger">
+                <i class="fas fa-trash-alt"></i> Delete</a>
+                &nbsp;&nbsp;&nbsp;
+                <a href="/contactList" class="btn btn-warning">
+                    <i class="fas fa-undo"></i> Cancel</a>
 
             </form>
         </div>

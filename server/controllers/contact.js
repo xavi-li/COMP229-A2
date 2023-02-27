@@ -12,34 +12,44 @@ module.exports.displayContactList = (req, res, next) => {
         }
         else {
            //console.log(contactList);
-            res.render('contact/list', { title: 'Business Contacts List', ContactList: contactList, displayName:req.user?req.user.displayName:'' });
+            res.render('contact/list', { 
+                title: 'Business Contacts List', 
+                ContactList: contactList, 
+                displayName: req.user ? req.user.displayName : '' 
+            });
         }
     }).sort('contact_name'); //order by contact_name in ascending alphabetical order
-}
+};
 
 module.exports.displayUpdatePage = (req, res, next) => {
     let id = req.params.id;
-    Contact.findById(id, (err, contactToUpdate) => {
+
+    Contact.findById(id, (err, contact) => {
         if (err) {
             console.log(err);
             res.end(err);
         }
         else {
-            res.render('contact/update', { title: 'Update Business Contacts', Contact: contactToUpdate, displayName:req.user?req.user.displayName:'' });
+            res.render('contact/update', { 
+                title: 'Update Business Contacts', 
+                Contact: contact,
+                displayName:req.user?req.user.displayName:''
+            });
         }
     });
-}
+};
+
 
 module.exports.processUpdatePage = (req, res, next) => {
     let id = req.params.id
-    let updatedBook = Contact({
+    let updatedContact = Contact({
         "_id": id,
-        "contact_name": req.body.contactName,
-        "contact_number": req.body.contactNumber,
-        "email_address": req.body.emarilAddress
+        "contact_name": req.body.contact_name,
+        "contact_number": req.body.contact_number,
+        "email_address": req.body.email_address
     });
 
-    Contact.updateOne({ _id: id }, updatedBook, (err) => {
+    Contact.updateOne({ _id: id }, updatedContact, (err) => {
         if (err) {
             console.log(err);
             res.end(err);
@@ -48,7 +58,7 @@ module.exports.processUpdatePage = (req, res, next) => {
             res.redirect('/contactList');
         }
     });
-}
+};
 
 module.exports.performDelete = (req, res, next) => {
     let id = req.params.id;
