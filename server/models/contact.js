@@ -1,3 +1,10 @@
+/* 
+  File Name:     /models/contact.js
+  Student Name:  Yuen Kwan LI
+  Student ID:    301228849
+  Date:          27-FEB-2023 
+*/
+
 let mongoose = require('mongoose');
 
 // create a model class

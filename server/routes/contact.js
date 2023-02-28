@@ -1,3 +1,10 @@
+/* 
+  File Name:     /routes/contact.js
+  Student Name:  Yuen Kwan LI
+  Student ID:    301228849
+  Date:          27-FEB-2023 
+*/
+
 let express = require('express');
 let router = express.Router();
 let mongoose = require('mongoose');
@@ -12,7 +19,7 @@ let contactController = require('../controllers/contact');
 router.get('/', contactController.displayContactList);
 
 // GET Route for displaying the Update page - UPDATE operation
-router.get('/update/:id', contactController.displayUpdatePage);
+router.get('/update/:id',  contactController.displayUpdatePage);
 
 // POST Route for processing the Update page - UPDATE Operation
 router.post('/update/:id', contactController.processUpdatePage);

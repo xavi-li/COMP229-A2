@@ -1,3 +1,10 @@
+/* 
+  File Name:     /controller/user.js
+  Student Name:  Yuen Kwan LI
+  Student ID:    301228849
+  Date:          27-FEB-2023 
+*/
+
 //require modules for the model
 let mongoose = require('mongoose');
 let passportLocalMongoose = require('passport-local-mongoose');
