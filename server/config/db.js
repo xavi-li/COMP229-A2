@@ -7,8 +7,8 @@
 
 module.exports = {
 	// localhost
-	//"URI":"mongodb://localhost/229a2"
+	"URI":"mongodb://localhost/229a2"
 
 	// cloud
-	"URI" : "mongodb+srv://root:HayUxOC1rzhxzfGw@cluster0.r33ip38.mongodb.net/229a2?retryWrites=true&w=majority"
+	//"URI" : "mongodb+srv://root:HayUxOC1rzhxzfGw@cluster0.r33ip38.mongodb.net/229a2?retryWrites=true&w=majority"
 }
